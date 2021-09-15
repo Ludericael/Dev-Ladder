@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range String Word Inside An Array</title>
+</head>
+<body>
+    
+    <script>
+         let text = prompt("Entrez une phrase pour compter son nombre de mots : ");
+        let rangeArray = []
+    
+
+        function rangeWords(string){
+            let temp = ''
+            for ( let i = 0; i < text.length; i++ ) {
+                
+                if (text[i] !== ' '){
+                    temp += text[i]
+                }
+                
+                else if ( (text[i] === ' ') ) {
+                    console.log('\n')
+                    rangeArray.push(temp)
+                    console.log(rangeArray)
+                    console.log('rangeArray  Length : ' +rangeArray.length + '\n\n')
+                    temp = ''
+                }
+                
+                if ( i === text.length - 1 ) {
+                     rangeArray.push(temp)
+                    //console.log('Temp : ' +temp)
+                }
+
+                console.log(`Temporary temp variable : ${temp} \n\n`)
+                //console.log('Incrimentation \n')
+            }
+        }
+
+        console.log(text)
+        console.log(`text.length : ${text.length}`)
+
+        rangeWords()
+
+        console.log('\n')
+        console.log(rangeArray)
+        console.log('RangeArray  Length : ' +rangeArray.length)
+
+    </script>
+</body>
+</html>
